@@ -25,6 +25,8 @@ int main() {
     return 0;
 }
 
+https://www.programiz.com/online-compiler/6XKJ4hUkcQUTo
+
 
 //Субботин ИС-22.9-П 9 задание (Оператор выбора), 09.09.2024
 #include <iostream>
@@ -60,3 +62,5 @@ int main() {
     
     return 0;
 }
+
+https://www.programiz.com/online-compiler/3fk6gKitxyxUT
