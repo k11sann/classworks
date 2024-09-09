@@ -1,3 +1,12 @@
+Ссылки на код :
+----------------------------------------------
+if (1 задание)
+https://www.programiz.com/online-compiler/6XKJ4hUkcQUTo
+----------------------------------------------
+Оператор выбора (9 задание)
+https://www.programiz.com/online-compiler/2eYROzPGX81zn
+----------------------------------------------
+
 //Субботин ИС-22.9-П 1 задание (if), 09.09.2024
 #include <iostream>
 #include <math.h>
@@ -25,7 +34,7 @@ int main() {
     return 0;
 }
 
-https://www.programiz.com/online-compiler/6XKJ4hUkcQUTo
+----------------------------------------------
 
 
 //Субботин ИС-22.9-П 9 задание (Оператор выбора), 09.09.2024
@@ -49,18 +58,16 @@ int main() {
         "December"};
     while (true)
     {
-        cout<<"\n Введите номер месяца="; cin>>i;
+        cout<<"\n Введите номер месяца : "; cin>>i;
         if (i>12||i<1)
         {
             cout<<"\n Нету такого месяца, возьмите число от 1 до 12";
         }
         else
         {
-            cout<<"\n"<<months[i-1];
+            cout<<"\n "<<months[i-1];
         }
     }
     
     return 0;
 }
-
-https://www.programiz.com/online-compiler/3fk6gKitxyxUT
