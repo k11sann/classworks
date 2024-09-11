@@ -1,7 +1,7 @@
-Ссылки на код :
+/*Ссылки на код :
 ----------------------------------------------
 https://www.programiz.com/online-compiler/5eYRO2yGl8GZY
-----------------------------------------------
+----------------------------------------------*/
 
 // Online C++ compiler to run C++ program online
 #include <iostream>
