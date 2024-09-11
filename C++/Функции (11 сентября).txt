@@ -1,0 +1,42 @@
+https://www.programiz.com/online-compiler/5YuZoBYsBtI1Z
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+float per(float x, float y, float z)
+{
+    float res;
+    res = (x+y+z)/2;
+    return res;
+}
+float formS(float x, float y, float z, float p)
+{
+    float res;
+    res = sqrt(p*(p-x)*(p-y)*(p-z));
+    return res;
+}
+int main()
+{
+    int i;
+    float a,b,c,p,s;
+    cout<< "\nКод запущен";
+    while (true)
+    {
+        cout<<"\na="; cin>>a;
+        cout<<"\nb="; cin>>b;
+        cout<<"\nc="; cin>>c;
+        p=per(a,b,c);
+        s=formS(a,b,c,p);
+        if (s > 15)
+        {
+            cout<<"\nПлощадь большая ппц, находите меньше пожалуйста хехе";
+        }
+        else
+        {
+            cout<<"\nПлощадь маленькая, молодец мурмур ^_^";
+        }
+        cout << "\nПлощадь Треугольника = " << s;
+    }
+    cout<<"\nКонец кода";
+    return 0;
+}
