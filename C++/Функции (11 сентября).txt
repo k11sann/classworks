@@ -8,7 +8,7 @@ https://www.programiz.com/online-compiler/5YuZoBYsBtI1Z
 https://www.programiz.com/online-compiler/1K0euFDK01BO2
 
 3:
-https://www.programiz.com/online-compiler/3vCKn3FcmalHW
+https://www.programiz.com/online-compiler/1SqyBzV7c6kbj
 ----------------------------------------------*/
 
 #include <iostream>
@@ -147,6 +147,7 @@ void Result(float s)
 void ReplaceTo(float x, float y)
 {
     float time;
+    cout<< "\nА = " << x << "     B = " << y;
     time = x;
     x = y;
     y = time;
