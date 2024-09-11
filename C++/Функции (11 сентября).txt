@@ -1,7 +1,11 @@
 /*---------------------------------------------
 Ссылки на код :
 ----------------------------------------------
+1:
 https://www.programiz.com/online-compiler/5YuZoBYsBtI1Z
+
+2:
+https://www.programiz.com/online-compiler/1K0euFDK01BO2
 ----------------------------------------------*/
 
 #include <iostream>
@@ -31,6 +35,54 @@ int main()
         cout<<"\nc="; cin>>c;
         p=per(a,b,c);
         s=formS(a,b,c,p);
+        if (s > 15)
+        {
+            cout<<"\nПлощадь большая ппц, находите меньше пожалуйста хехе";
+        }
+        else
+        {
+            cout<<"\nПлощадь маленькая, молодец мурмур ^_^";
+        }
+        cout << "\nПлощадь Треугольника = " << s;
+    }
+    cout<<"\nКонец кода";
+    return 0;
+}
+
+
+
+
+//----------------------------------------------
+
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+float formP(float x,float y, float z)
+{
+    float p;
+    p= (x+y+z)/2;
+    return p;
+}
+float formS(float x, float y, float z)
+{
+    float p,s;
+    p = formP(x,y,z);
+    s = sqrt(p*(p-x)*(p-y)*(p-z));
+    return p,s;
+}
+int main()
+{
+    int i;
+    float a,b,c,s;
+    cout<< "\nКод запущен";
+    while (true)
+    {
+        cout<<"\na="; cin>>a;
+        cout<<"\nb="; cin>>b;
+        cout<<"\nc="; cin>>c;
+        s=formS(a,b,c);
         if (s > 15)
         {
             cout<<"\nПлощадь большая ппц, находите меньше пожалуйста хехе";
