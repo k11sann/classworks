@@ -10,7 +10,6 @@ while True:
     except ValueError:
         print("-----------------------------")
         print("Укажите числовое значение!")
-        print("-----------------------------")
 while (a!=b):
     if (a>b):
         a=a-b
