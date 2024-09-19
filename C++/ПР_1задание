@@ -1,0 +1,33 @@
+#include <stdio.h>
+using namespace std;
+int main() {
+    float a,b,c;
+    int m,n;
+    float v;
+    printf("Введите число от 1 до 2 \n[ 1 ] = Вывод с заготовленными значениями \n[ 2 ] = Вывод с введёнными значениями \n");
+    scanf("\n%2f",&v);
+    if (v = 1){
+        printf("1");
+        a = 32.4;
+        m = 87;
+        b = 0.05;
+        n = 4567;
+        c = 2314.45;
+        printf("\na=%8.3f \nb=%7.2f \nc=%12.3e",a,b,c);
+        printf("\nm=%10d \nn=%5d",m,n);
+        v =0;
+    }
+    if (v = 2) {
+        printf("2");
+        scanf("%f%d%f%d%f",&a,&m, &b, &n, &c);
+        printf("\na=%8.3f \nb=%7.2f \nc=%12.3e",a,b,c);
+        printf("\nm=%10d \nn=%5d",m,n);
+        v = 0;
+    }
+    else{
+        printf("Было введено неккоректное значение");
+    }
+        //scanf("%f%d%f%d%f",&a,&m, &b, &n, &c); если хочется ввод знач.
+    
+    return 0;
+}
