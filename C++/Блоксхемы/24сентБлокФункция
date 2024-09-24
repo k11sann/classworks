@@ -1,0 +1,48 @@
+// Субботин ИС 22-9-П 24.09.2024
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int flooring(int x){
+    float y;
+    if (-10<=x<=0){
+        y = -x/2-3;
+        }
+        else{
+            //cout<<"\nСкип первой";
+            if (x>0&& x<=3){
+                y=-(sqrt(pow(3, 2)-pow(x,2)));
+            }
+            else{
+                //cout<<"\nСкип второй";
+                if (x>3 && x<=6){
+                    y=sqrt(pow(3,2)-(x-3));
+                }
+                else{
+                // cout<<"\nСкип третьей";
+                    if (x<6 && x<=8){
+                        y=0;
+                    }
+                    else{
+                        cout<<"\nФункция не определена";
+                    }
+                }
+            }
+        }
+    return y;
+}
+
+int main() {
+    float x,res;
+    for (int i = -10; i<=15; i++){
+        x=i;
+        cout<<"\nЗначение Х : "<<x;
+        res = flooring(x);
+        cout<<"\nЗнаачение Y "<<res;
+        cout<<"\n-------------------";
+    }
+    
+    
+
+    return 0;
+}
