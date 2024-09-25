@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int const N=3; int i; bool nextGroup = true;
+    int const N=2; int i,j,KursValue;
     float maxs;
     struct student{
         char fam[30];
@@ -22,33 +22,49 @@ int main() {
         printf("\nГруппа: ");
         scanf("%s", &stud[i].grup);
         printf("\n----------------------------------");
+        printf("\nКурс: ");
+        scanf("%d", &stud[i].kurs);
+        printf("\n----------------------------------");
         printf("\nСтипендия: ");
         scanf("%f", &stud[i].stip);
         printf("\n//////////////////////////////////");
     }
-    for (i=0; i<N; i++){
-        if (nextGroup == true){
-            for (i=0; i<N; i++){
-                if (stud[i].grup!=stud[i+1].grup){
-                    printf("\nГруппа : %s", stud[i].grup);
-                    printf("\nФамииля : %s", stud[i].fam);
-                    printf("\nСтепендия : %s", stud[i].stip);
+    maxs=0;
+    printf("\nФильтр : Выберите курс (0 отмена) \nДоступные курсы:");
+    for (j=0; j<N; j++){
+        if (stud[j].kurs!=stud[j-1].kurs){
+            printf("\nКурс : [ %d ]", stud[j].kurs);
+        }
+    }
+    printf("\n---------------------------------- \nВвести номер курса :");
+    scanf("%d", &KursValue);
+    if (KursValue==0){
+        for (j=0; j<N; j++){
+            printf("\nГруппа : %s", stud[j].grup);
+            printf("\nФамииля : %s", stud[j].fam);
+            printf("\nСтепендия : %f", stud[j].stip);
+            printf("\n----------------------------------");
+            if (stud[j].stip>maxs){
+                maxs=stud[j].stip;
+            }
+        }
+        for (i=0; i<N; i++){
+                if (stud[i].stip==maxs){
+                    printf("\nСтудент %s получающий максимальную степендию в размере %f в группе %s", stud[i].fam, maxs, stud[i].grup);
                 }
-                maxs=0;
-                for (i=0; i<N; i++){
-                    if (stud[i].stip>maxs){
-                        maxs=stud[i].stip;
-                    }
-                }
-                for (i=0; i<N; i++){
-                    if (stud[i].stip==maxs){
-                        printf("\nСтудент %s получающий максимальную степендию в размере %f в группе %s", stud[i].fam, maxs, stud[i].grup);
-                    }
-                }
-                
+        }
+        printf("\n//////////////////////////////////");
+    }
+    else{
+        for (i=0; i<N; i++){
+            if (stud[i].kurs==KursValue){
+                printf("\nГруппа : %s", stud[i].grup);
+                printf("\nФамииля : %s", stud[i].fam);
+                printf("\nСтепендия : %f", stud[i].stip);
+                printf("\n----------------------------------");
             }
         }
     }
-    printf("\n//////////////////////////////////");
+    
     return 0;
 }
