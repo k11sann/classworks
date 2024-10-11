@@ -1,0 +1,31 @@
+// Субботин ИС 22.9-П 03.10.2024 19 ВАРИАНТ
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main() {
+    unsigned long max,min,random,x;
+    int y;
+    char value;
+    max = LLONG_MAX;
+    min = LLONG_MIN;
+    cout<<"\nMIN = "<<min;
+    cout<<"\nMAX = "<<max;
+    cout<<"\nX = "; cin>>x;
+    if (x > max){
+        x=max;
+    }
+    if (x > min){
+        x=min;
+    }
+    cout<<"\nX = "<<x;
+    while(true){
+        y=x/2;
+        if (y==x/2-1||y==x/2+1){
+            value=value+y;
+        }
+        cout<<"\nvalue = "<<value;
+    }
+    cout<<"\nvalue = "<<value;
+    return 0;
+}
