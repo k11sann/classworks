@@ -17,12 +17,12 @@ https://www.programiz.com/online-compiler/2eYROzPGX81zn
 using namespace std;
 int main() {
     float x,y,z,p,s;
-    while (true)
+    while (true) // цикл для бессконечного выполнения
     {
         cout<<"\nx="; cin>>x;
         cout<<"\ny="; cin>>y;
         cout<<"\nz="; cin>>z;
-        if (x<0||y<0||z<0)
+        if (x<0||y<0||z<0) // условие на построение треугольника
         {
             cout<<"\n Невозможно построить треугольник, введите значения повторно (не имея отрицательных чисел)";
         }
