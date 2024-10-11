@@ -22,7 +22,7 @@ int main (void) {
     // Явное преобразование типов 
     z = (double) ch + (double) a + (double) b  + (double) x + y;
 
-    printf("\n\t The apparent conversion types: %lf\n", z);
+    printf("\n\t The apparent conversion types: %lf\n", z); // Формулы
     z = sqrt((double)a/b);
     printf("\n\t z = sqrt(%d/%d) = %lf\n", a, b, z);
     printf("\n\t z = lg(%d/%d) = %lf\n", a, b, log10(z));
