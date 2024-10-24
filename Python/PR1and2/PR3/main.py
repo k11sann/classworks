@@ -18,8 +18,33 @@ root.grid()
 
 '''--------Functions-------'''
 
+def result():
+    print("meow")
+    try:
+        x1 = int(JumpButton1.get())
+        x2 = int(EatButton1.get())
+        x3 = int(BeatyButton1.get())
+        LabelBall1["text"] = x1+x2+x3
+    except ValueError:
+        LabelBall1["text"] = "Н/Б"
 
+    try:
+        x1 = int(JumpButton2.get())
+        x2 = int(EatButton2.get())
+        x3 = int(BeatyButton2.get())
+        LabelBall2["text"] = x1+x2+x3
+    except ValueError:
+        LabelBall2["text"] = "Н/Б"
 
+    try:
+        x1 = int(JumpButton3.get())
+        x2 = int(EatButton3.get())
+        x3 = int(BeatyButton3.get())
+        LabelBall3["text"] = x1+x2+x3
+    except ValueError:
+        LabelBall3["text"] = "Н/Б"
+
+    
 
 
 
@@ -43,6 +68,12 @@ LabelEat = tk.Label(root, text="Корм за минуту", font=("Courier New"
 LabelEat.place(x=50, y=40)
 LabelBeaty = tk.Label(root, text="Изящность", font=("Courier New", 9))
 LabelBeaty.place(x=50, y=40)
+LabelBalls = tk.Label(root, text="Баллы", font=("Courier New", 9))
+LabelBalls.place(x=50, y=40)
+
+LabelBall1 = tk.Label(root, text="", font=("Courier New", 9))
+LabelBall2 = tk.Label(root, text="", font=("Courier New", 9))
+LabelBall3 = tk.Label(root, text="", font=("Courier New", 9))
 
 
 
@@ -66,7 +97,7 @@ BeatyButton3 = tk.Entry(root)
 
 
 allNamesX = [LabelAmounts, LabelName1, LabelName2, LabelName3]
-allNamesY = [LabelAmounts, LabelJump, LabelEat, LabelBeaty]
+allNamesY = [LabelAmounts, LabelJump, LabelEat, LabelBeaty,LabelBalls]
 
 JumpButtons = [JumpButton1, JumpButton2, JumpButton3]
 for i in range(len(allNamesX)): # вычисляет длину массива чтобы применялось к объектам
@@ -83,6 +114,10 @@ for i in range(len(allNamesY)): # вычисляет длину массива �
         n=50*i
     allNamesY[i].place(x=20, y=40+n)
 
+LabelBall1.place(x=LabelName1.place_info().get("x"), y=LabelBalls.place_info().get("y")) # размещает баллы по участникам
+LabelBall2.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y"))
+LabelBall3.place(x=LabelName3.place_info().get("x"), y=LabelBalls.place_info().get("y"))
+
 JumpButton1.place(x=LabelName1.place_info().get("x"), y=LabelJump.place_info().get("y"))
 JumpButton2.place(x=LabelName2.place_info().get("x"), y=LabelJump.place_info().get("y"))
 JumpButton3.place(x=LabelName3.place_info().get("x"), y=LabelJump.place_info().get("y"))
@@ -94,5 +129,9 @@ EatButton3.place(x=LabelName3.place_info().get("x"), y=LabelEat.place_info().get
 BeatyButton1.place(x=LabelName1.place_info().get("x"), y=LabelBeaty.place_info().get("y"))
 BeatyButton2.place(x=LabelName2.place_info().get("x"), y=LabelBeaty.place_info().get("y"))
 BeatyButton3.place(x=LabelName3.place_info().get("x"), y=LabelBeaty.place_info().get("y"))
+
+
+resButton = tk.Button(text="Расчитать баллы", command=result)
+resButton.place(x=20, y=280)
 
 root.mainloop()
