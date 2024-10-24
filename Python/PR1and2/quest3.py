@@ -5,7 +5,7 @@ import math
 
 root = tk.Tk()
 
-root.title("Практическая №3 ИС-22/9-П Субботин Даниэль Александрович")
+root.title("Практическая №1.2 ИС-22/9-П Субботин Даниэль Александрович" 3 задание)
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -26,31 +26,15 @@ def result():
     b=int(bButton.get())
     c=int(cButton.get())
     triangleType = "none"
-    sA=b/c
-    sB=a/c
-    sC=b/a
-    if a==b and b==c: # Остроугольный треуг
+    if pow(a,2)<pow(b,2)+pow(c,2): # Остроугольный треуг
         triangleType = "Остроугольный"
-
-        if sA<90 or sB<90 or sC<90:
-
-
-        S=pow(a,2)*math.sqrt(3/4)
-        LabelResult["text"] = "Тип треугольника : "+triangleType+", Площадь : "+str(S)
-    elif a==b and b!=c: #Тупоугольный треуг
-        triangleType = "Тупоугольный"
-        S=(b*math.sqrt(4*pow(a,2)-pow(c,2)))/4
-        LabelResult["text"] = "Тип треугольника : "+triangleType+", Площадь : "+str(S)
-    else: #Прямоугольный
+        LabelResult["text"] = "Тип треугольника : "+triangleType
+    elif pow(a,2)==pow(b,2)+pow(c,2): #Прямоугольный треуг
         triangleType = "Прямоугольный"
-        p=float((a+b+c)/2)
-        print(p)
-        try:
-            S=math.sqrt(p*(p-a)*(p-b)*(p-c))
-            LabelResult["text"] = "Тип треугольника : "+triangleType+", Площадь : "+str(S)
-        except ValueError:
-            LabelResult["text"] = "Тип треугольника : "+triangleType+", Невозможно вычислить площадь"
-    print(S)
+        LabelResult["text"] = "Тип треугольника : "+triangleType
+    else: #Тупоугольный
+        triangleType = "Тупоугольный"
+        LabelResult["text"] = "Тип треугольника : "+triangleType
 
 '''Label'''
 
