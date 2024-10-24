@@ -5,7 +5,7 @@ import math
 
 root = tk.Tk()
 
-root.title("Практическая №3 ИС-22/9-П Субботин Даниэль Александрович")
+root.title("Практическая №1.2 ИС-22/9-П Субботин Даниэль Александрович 1 задание")
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
