@@ -1,0 +1,22 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() 
+{
+    int n=3, i=1, s=0;
+    if(i<=n)
+    {
+        while (i<=n)
+    {
+        s=s+(3*i+2);
+        i=i+1;
+    }
+    cout<<"\ngood";
+    }
+    else
+    {
+        cout<<"\nEND";
+    }
+    return 0;
+}
