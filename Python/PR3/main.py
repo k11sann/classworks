@@ -45,20 +45,17 @@ def result():
         LabelBall3["text"] = "Н/Б"
 
     Balls = [LabelBall1, LabelBall2, LabelBall3]
-    prev = 0
     current = 0
     champ = 0
     champName = "Чемпион не определён"
     for i in range(len(Balls)):
         if Balls[i]["text"]!="Н/Б":
             current=int(Balls[i]["text"])
-            if current > prev:
+            if current > champ:
                 champ = current
                 champName = Balls[i]["text"]
             elif current == prev:
                 champName = "Участники имеют одинаковое количество баллов"
-            else:
-                prev=current
     
             
         
