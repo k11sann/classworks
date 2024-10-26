@@ -56,7 +56,7 @@ def result():
                 champName = Balls[i]["text"]
             elif current == prev:
                 champName = "Участники имеют одинаковое количество баллов"
-    
+    LabelChampion["text"] = champName
             
         
 
