@@ -19,13 +19,12 @@ root.grid()
 '''--------Functions-------'''
 
 def result():
-    print("meow")
-    try:
+    try: # проверка получения значений
         x1 = int(JumpButton1.get())
         x2 = int(EatButton1.get())
         x3 = int(BeatyButton1.get())
         LabelBall1["text"] = x1+x2+x3
-    except ValueError:
+    except ValueError: # иначе будет Н/Б = Нет Баллов
         LabelBall1["text"] = "Н/Б"
 
     try:
@@ -44,19 +43,19 @@ def result():
     except ValueError:
         LabelBall3["text"] = "Н/Б"
 
-    Balls = [LabelBall1, LabelBall2, LabelBall3]
-    current = 0
-    champ = 0
-    champName = "Чемпион не определён"
-    for i in range(len(Balls)):
-        if Balls[i]["text"]!="Н/Б":
+    Balls = [LabelBall1, LabelBall2, LabelBall3] # массив лейблов с баллами
+    current = 0 # текущие баллы у участника по циклу
+    champ = 0 # баллы чемпиона
+    champName = "Чемпион не определён" # имя чемпиона
+    for i in range(len(Balls)): # цикл по количеству длины массива Bals
+        if Balls[i]["text"]!="Н/Б": # если текст баллов не равен НБ, то будет выполняться условие
             current=int(Balls[i]["text"])
-            if current > champ:
+            if current > champ: # если текущее значение больше чем чемпиона, то текущее становится чемпионом
                 champ = current
                 champName = Balls[i]["text"]
-            elif current == prev:
-                champName = "Участники имеют одинаковое количество баллов"
-    LabelChampion["text"] = champName
+            elif current == prev: # если имеют одинаковое количество баллов
+                champName = "Участники имеют одинаковое количество баллов, нет победителя"
+    LabelChampion["text"] = champName # установка имени после цикла
             
         
 
@@ -65,18 +64,18 @@ def result():
 
 
 '''--------Label-------'''
-mainTitleLabel = tk.Label(root, text="Соревнование по квадробингу", font=("Courier New", 15), background="#a688be", foreground="#53445f")
+mainTitleLabel = tk.Label(root, text="Соревнование по квадробингу", font=("Courier New", 15), background="#a688be", foreground="#53445f") #титул
 mainTitleLabel.place(x=window_width//4, rely=0.01)
 mainTitleLabel.pack(anchor="center",padx=8, pady= 8)
 
-LabelName1 = tk.Label(root, text="Марат", font=("Courier New", 9))
+LabelName1 = tk.Label(root, text="Марат", font=("Courier New", 9)) #имена
 LabelName2 = tk.Label(root, text="Лейсан", font=("Courier New", 9))
 LabelName3 = tk.Label(root, text="Алексей", font=("Courier New", 9))
 LabelName1.place(x=50, y=40)
 LabelName2.place(x=50, y=40)
 LabelName3.place(x=50, y=40)
 
-LabelAmounts = tk.Label(root, text="Кол-во", font=("Courier New", 9))
+LabelAmounts = tk.Label(root, text="Кол-во", font=("Courier New", 9)) #критерии
 LabelAmounts.place(x=50, y=40)
 LabelJump = tk.Label(root, text="Прыжки в минуту", font=("Courier New", 9))
 LabelJump.place(x=50, y=40)
@@ -87,7 +86,7 @@ LabelBeaty.place(x=50, y=40)
 LabelBalls = tk.Label(root, text="Баллы", font=("Courier New", 9))
 LabelBalls.place(x=50, y=40)
 
-LabelBall1 = tk.Label(root, text="", font=("Courier New", 9))
+LabelBall1 = tk.Label(root, text="", font=("Courier New", 9)) #баллы
 LabelBall2 = tk.Label(root, text="", font=("Courier New", 9))
 LabelBall3 = tk.Label(root, text="", font=("Courier New", 9))
 
@@ -99,9 +98,9 @@ LabelChampion = tk.Label(root, text="Чемпион не определён", fo
 
 '''--------Buttons-------'''
 
-EatButton1 = tk.Entry(root)
-EatButton2 = tk.Entry(root)
-EatButton3 = tk.Entry(root)
+EatButton1 = tk.Entry(root) # первый участник
+EatButton2 = tk.Entry(root) # второй участник
+EatButton3 = tk.Entry(root) # третий участник
 
 JumpButton1 = tk.Entry(root)
 JumpButton2 = tk.Entry(root)
@@ -113,8 +112,8 @@ BeatyButton3 = tk.Entry(root)
 
 
 
-allNamesX = [LabelAmounts, LabelName1, LabelName2, LabelName3]
-allNamesY = [LabelAmounts, LabelJump, LabelEat, LabelBeaty,LabelBalls]
+allNamesX = [LabelAmounts, LabelName1, LabelName2, LabelName3] #массив участников
+allNamesY = [LabelAmounts, LabelJump, LabelEat, LabelBeaty,LabelBalls] #массив критерий
 
 JumpButtons = [JumpButton1, JumpButton2, JumpButton3]
 for i in range(len(allNamesX)): # вычисляет длину массива чтобы применялось к объектам
@@ -134,11 +133,11 @@ for i in range(len(allNamesY)): # вычисляет длину массива �
 LabelBall1.place(x=LabelName1.place_info().get("x"), y=LabelBalls.place_info().get("y")) # размещает баллы по участникам
 LabelBall2.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y"))
 LabelBall3.place(x=LabelName3.place_info().get("x"), y=LabelBalls.place_info().get("y"))
-LabelChampion.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y")+40)
+LabelChampion.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y")+40) # размещение чемпиона
 
-JumpButton1.place(x=LabelName1.place_info().get("x"), y=LabelJump.place_info().get("y"))
-JumpButton2.place(x=LabelName2.place_info().get("x"), y=LabelJump.place_info().get("y"))
-JumpButton3.place(x=LabelName3.place_info().get("x"), y=LabelJump.place_info().get("y"))
+JumpButton1.place(x=LabelName1.place_info().get("x"), y=LabelJump.place_info().get("y")) #энтри первого участника
+JumpButton2.place(x=LabelName2.place_info().get("x"), y=LabelJump.place_info().get("y")) #энтри второго участника
+JumpButton3.place(x=LabelName3.place_info().get("x"), y=LabelJump.place_info().get("y")) #энтри третьего участника
 
 EatButton1.place(x=LabelName1.place_info().get("x"), y=LabelEat.place_info().get("y"))
 EatButton2.place(x=LabelName2.place_info().get("x"), y=LabelEat.place_info().get("y"))
@@ -149,7 +148,7 @@ BeatyButton2.place(x=LabelName2.place_info().get("x"), y=LabelBeaty.place_info()
 BeatyButton3.place(x=LabelName3.place_info().get("x"), y=LabelBeaty.place_info().get("y"))
 
 
-resButton = tk.Button(text="Расчитать баллы", command=result)
+resButton = tk.Button(text="Расчитать баллы", command=result) #кнопка результата
 resButton.place(x=20, y=280)
 
 root.mainloop()
