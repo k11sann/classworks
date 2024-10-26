@@ -44,6 +44,25 @@ def result():
     except ValueError:
         LabelBall3["text"] = "Н/Б"
 
+    Balls = [LabelBall1, LabelBall2, LabelBall3]
+    prev = 0
+    current = 0
+    champ = 0
+    champName = "Чемпион не определён"
+    for i in range(len(Balls)):
+        if Balls[i]["text"]!="Н/Б":
+            current=int(Balls[i]["text"])
+            if current > prev:
+                champ = current
+                champName = Balls[i]["text"]
+            elif current == prev:
+                champName = "Участники имеют одинаковое количество баллов"
+            else:
+                prev=current
+    
+            
+        
+
     
 
 
@@ -75,6 +94,7 @@ LabelBall1 = tk.Label(root, text="", font=("Courier New", 9))
 LabelBall2 = tk.Label(root, text="", font=("Courier New", 9))
 LabelBall3 = tk.Label(root, text="", font=("Courier New", 9))
 
+LabelChampion = tk.Label(root, text="Чемпион не определён", font=("Courier New", 9))
 
 
 
@@ -117,6 +137,7 @@ for i in range(len(allNamesY)): # вычисляет длину массива �
 LabelBall1.place(x=LabelName1.place_info().get("x"), y=LabelBalls.place_info().get("y")) # размещает баллы по участникам
 LabelBall2.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y"))
 LabelBall3.place(x=LabelName3.place_info().get("x"), y=LabelBalls.place_info().get("y"))
+LabelChampion.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y")+40)
 
 JumpButton1.place(x=LabelName1.place_info().get("x"), y=LabelJump.place_info().get("y"))
 JumpButton2.place(x=LabelName2.place_info().get("x"), y=LabelJump.place_info().get("y"))
