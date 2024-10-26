@@ -1,0 +1,58 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    float a, b, c, x, y, r;
+    cout<<"\nEnter a value a - "; cin>>a;
+    cout<<"\nEnter a value b - "; cin>>b;
+    cout<<"\nEnter a value c - "; cin>>c;
+    cout<<"\nEnter a value x - "; cin>>x;
+    cout<<"\nEnter a value y - "; cin>>y;
+    if(a>b)
+    {
+        r=a;
+        a=b;
+        b=r;
+    }
+    else
+    {
+        if(b>c)
+        {
+            r=b;
+            b=c;
+            c=r;
+        }
+        else
+        {
+           if(a>b)
+            {
+            r=a;
+            a=b;
+            b=r;
+            }
+        else
+        {
+            if(x>y)
+            {
+               r=x;
+               x=y;
+               y=r;
+            }
+            else
+            {
+                if(a<x && b<y)
+                {
+                    cout<<"\npass";
+                }
+                else
+                {
+                    cout<<"\nno pass";
+                }
+            }
+        }
+        }
+    }
+    return 0;
+}
