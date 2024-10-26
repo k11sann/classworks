@@ -2,4 +2,4 @@
 <p align="center">Тут публикуются мои работы, сделанные в колледже, ну и также доделанные может быть уже дома.</p>
 
 <p align="center"><b><i>✨ Не копируйте работы, пожалуйста ✨</i></b></p>
-<p align="center"><img src="https://github.com/k11sann/classworks/blob/main/asset_girl.gif" width=25% height=25% alt=""></p>
+<p align="center"><img src="https://github.com/k11sann/classworks/blob/main/asset_girl.gif" width=30% height=30% alt=""></p>
