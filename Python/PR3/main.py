@@ -14,7 +14,7 @@ x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
-root.iconphoto(False, PhotoImage(file="logo.png")) #логотип
+root.iconphoto(False, PhotoImage(file="PR3\logo.png")) #логотип
 root.grid()
 
 '''--------Functions-------'''
@@ -76,7 +76,7 @@ def result():
 
 '''--------Label-------'''
 canvas = Canvas(root, width=256, height=256)
-image_Label = PhotoImage(file="logoTitle.png").subsample(2,2)
+image_Label = PhotoImage(file="PR3\logoTitle.png").subsample(2,2)
 canvas.create_image(0,0,anchor='nw', image=image_Label)
 canvas.pack()
 canvas.place(x=40,y=100)
