@@ -14,7 +14,7 @@ x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
-root.iconphoto(False, PhotoImage(file="logo.png"))
+root.iconphoto(False, PhotoImage(file="logo.png")) #логотип
 root.grid()
 
 '''--------Functions-------'''
