@@ -3,7 +3,7 @@ from tkinter import PhotoImage, Canvas
 
 root = tk.Tk()
 
-root.title("Практическая №3 ИС-22/9-П Субботин Даниэль Александрович")
+root.title("Практическая №4 ИС-22/9-П Субботин Даниэль Александрович")
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -35,8 +35,7 @@ def sum():
             print(allXs[i])
             res = res+allXs[i]
         except ValueError:
-            allXs[i] = 0
-            res = res+allXs[i]
+            print("Нет числа")
     print(res)
     mainTitleLabel["text"]="Результат суммы : "+str(res)
 
@@ -55,7 +54,7 @@ def mult():
             print(allXs[i])
             res = res*allXs[i]
         except ValueError:
-            print("Отсутствует число")
+            print("Нет числа")
     print(res)
     mainTitleLabel["text"]="Результат умножения : "+str(res)
 
@@ -73,8 +72,7 @@ def max():
             allXs[i] = int(allEntry[i].get())
             print(allXs[i])
         except ValueError:
-            allXs[i] = 0
-            print("Отсутствует число")
+            allXs[i] = "none"
     res=allXs[0]
     for val in allXs:
         if val!="none":
@@ -91,14 +89,12 @@ def min():
     x4 = "none"
     res = 0
     allXs= [x1,x2,x3,x4]
-    allEntry = [entrySum, entryMult, entryMax, entryMin] #массив entry
     for i in range(len(allEntry)):
         try:
             allXs[i] = int(allEntry[i].get())
             print(allXs[i])
         except ValueError:
             allXs[i] = "none"
-            print("Отсутствует число")
     res=allXs[0]
     for val in allXs:
         if val!="none":
@@ -127,10 +123,10 @@ mainTitleLabel.pack(anchor="center",padx=8, pady= 8)
 '''--------Buttons-------'''
 xWidth = 30 #длина
 yHeight = 3 #высота
-entrySum = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black") # первый участник
-entryMult = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black") # второй участник
-entryMax = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black") # третий участник
-entryMin = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black") # третий участник
+entrySum = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black")
+entryMult = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black")
+entryMax = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black")
+entryMin = tk.Entry(root, width=xWidth//2, font=("arial", yHeight*10), fg="white", bg="black")
 
 buttonSum = tk.Button(root, text="Сумма", width=xWidth, height=yHeight, command=sum)
 buttonMult = tk.Button(root, text="Произведение", width=xWidth, height=yHeight, command=mult)
