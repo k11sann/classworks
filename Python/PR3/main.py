@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import PhotoImage, Canvas
 
 root = tk.Tk()
 
@@ -14,6 +14,7 @@ x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
+root.iconphoto(False, PhotoImage(file="logo.png"))
 root.grid()
 
 '''--------Functions-------'''
@@ -74,8 +75,14 @@ def result():
 
 
 '''--------Label-------'''
+canvas = Canvas(root, width=256, height=256)
+image_Label = PhotoImage(file="logoTitle.png").subsample(2,2)
+canvas.create_image(0,0,anchor='nw', image=image_Label)
+canvas.pack()
+canvas.place(x=40,y=100)
+
 mainTitleLabel = tk.Label(root, text="Соревнование по квадробингу", font=("Courier New", 15), background="#a688be", foreground="#53445f") #титул
-mainTitleLabel.place(x=window_width//4, rely=0.01)
+mainTitleLabel.place(relx=0.5, rely=0.01)
 mainTitleLabel.pack(anchor="center",padx=8, pady= 8)
 
 LabelName1 = tk.Label(root, text="Марат", font=("Courier New", 9)) #имена
@@ -128,19 +135,19 @@ for i in range(len(allNamesX)): # вычисляет длину массива �
         n=0
     else:
         n=190*i
-    allNamesX[i].place(x=20+n, y=40)
+    allNamesX[i].place(x=140+n, y=40)
 
 for i in range(len(allNamesY)): # вычисляет длину массива чтобы применялось к объектам
     if i==1:
         n=50
     else:
         n=50*i
-    allNamesY[i].place(x=20, y=40+n)
+    allNamesY[i].place(x=190, y=40+n)
 
 LabelBall1.place(x=LabelName1.place_info().get("x"), y=LabelBalls.place_info().get("y")) # размещает баллы по участникам
 LabelBall2.place(x=LabelName2.place_info().get("x"), y=LabelBalls.place_info().get("y"))
 LabelBall3.place(x=LabelName3.place_info().get("x"), y=LabelBalls.place_info().get("y"))
-LabelChampion.place(x=int(LabelName2.place_info().get("x"))-225, y=int(LabelBalls.place_info().get("y"))+40) # размещение чемпиона
+LabelChampion.place(x=int(LabelName2.place_info().get("x"))-200, y=int(LabelBalls.place_info().get("y"))+40) # размещение чемпиона
 
 JumpButton1.place(x=LabelName1.place_info().get("x"), y=LabelJump.place_info().get("y")) #энтри первого участника
 JumpButton2.place(x=LabelName2.place_info().get("x"), y=LabelJump.place_info().get("y")) #энтри второго участника
@@ -156,6 +163,6 @@ BeatyButton3.place(x=LabelName3.place_info().get("x"), y=LabelBeaty.place_info()
 
 
 resButton = tk.Button(text="Расчитать баллы", command=result) #кнопка результата
-resButton.place(x=20, y=280)
+resButton.place(x=LabelBalls.place_info().get("x"), y=LabelChampion.place_info().get("y"))
 
 root.mainloop()
