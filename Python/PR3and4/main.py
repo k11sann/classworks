@@ -5,7 +5,7 @@ from tkinter import *
 
 root = tk.Tk()
 
-root.title("Практическая №4 ИС-22/9-П Субботин Даниэль Александрович")
+root.title("Практическая №3.4 ИС-22/9-П Субботин Даниэль Александрович")
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
