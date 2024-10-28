@@ -88,20 +88,12 @@ mainTitleLabel.pack(anchor="center",padx=8, pady= 8)
 LabelName1 = tk.Label(root, text="Марат", font=("Courier New", 9)) #имена
 LabelName2 = tk.Label(root, text="Лейсан", font=("Courier New", 9))
 LabelName3 = tk.Label(root, text="Алексей", font=("Courier New", 9))
-LabelName1.place(x=50, y=40)
-LabelName2.place(x=50, y=40)
-LabelName3.place(x=50, y=40)
 
 LabelAmounts = tk.Label(root, text="Кол-во", font=("Courier New", 9)) #критерии
-LabelAmounts.place(x=50, y=40)
 LabelJump = tk.Label(root, text="Прыжки в минуту", font=("Courier New", 9))
-LabelJump.place(x=50, y=40)
 LabelEat = tk.Label(root, text="Корм за минуту", font=("Courier New", 9))
-LabelEat.place(x=50, y=40)
 LabelBeaty = tk.Label(root, text="Изящность", font=("Courier New", 9))
-LabelBeaty.place(x=50, y=40)
 LabelBalls = tk.Label(root, text="Баллы", font=("Courier New", 9))
-LabelBalls.place(x=50, y=40)
 
 LabelBall1 = tk.Label(root, text="", font=("Courier New", 9)) #баллы
 LabelBall2 = tk.Label(root, text="", font=("Courier New", 9))
