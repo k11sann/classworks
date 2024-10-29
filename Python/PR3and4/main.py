@@ -115,7 +115,7 @@ buttonClear = tk.Button(root, text="CE", width=xWidth, height=yHeight, command=c
 buttonPow = tk.Button(root, text="В степень ^n", width=xWidth, height=yHeight, command=calc_pow)
 buttonSqrt = tk.Button(root, text="Корень √", width=xWidth, height=yHeight, command=calc_sqrt)
 
-allButtons = [buttonSum, buttonMinus, buttonDiv, buttonMult,buttonPow,buttonSqrt,buttonClear] #массив buttons
+allButtons = [buttonSum, buttonMinus, buttonMult, buttonDiv,buttonPow,buttonSqrt,buttonClear] #массив buttons
 allEntry = [entryX1, entryX2] #массив entry
 meow = 24 #размер
 for i in range(len(allButtons)): # вычисляет длину массива чтобы применялось к объектам
