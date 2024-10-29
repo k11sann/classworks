@@ -30,7 +30,7 @@ def result():
         triangleType = "Равносторонний"
         S=pow(a,2)*math.sqrt(3/4)
         LabelResult["text"] = "Тип треугольника : "+triangleType+", Площадь : "+str(S)
-    elif a==b and b!=c: #равнобедренный треуг
+    elif (a==b and b!=c) or (a!=b and b==c): #равнобедренный треуг
         triangleType = "Равнобедренный"
         S=(b*math.sqrt(4*pow(a,2)-pow(c,2)))/4
         LabelResult["text"] = "Тип треугольника : "+triangleType+", Площадь : "+str(S)
