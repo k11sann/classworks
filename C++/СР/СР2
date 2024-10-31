@@ -36,52 +36,19 @@ int main (void) {
 
 }
 
+--- НОВОЕ! ! ! ! ! ! ! ! ! ! ! !
+// Субботин ИС 22.9-П 31.10.2024 СР3 ВАРИАНТ 10
+//Расстояние между полицейской машиной и автомобилем преступника равно 240 м. Скорость полицейского автомобиля 40 м/c, машины преступника - 38 м/с. Как скоро полицейские догонят преступника?
+#include <iostream>
+using namespace std;
 
-//3 задание ----------------------
-#include <stdio.h>
-
-// Для числа пи 
-#define _USE_MATH_DEFINES
-#include <math.h>
-
-#include <limits.h>
-#include <float.h>
-
-int main (void){
-    double R;
-    double a, b, c;
-
-    printf("\n Enter a real greater than zero: ");
-    scanf("%lf", &R);
-    a = M_PI*R*R;
-    b = M_PI*R;
-    c = M_PI*a*b;
-    printf("\n A (Длина большей полуоси) = %g is %g", R, a);
-    printf("\n B (Длина меньшей полуоси) = %g is %g",R,b);
-    puts("");
-    printf("\n Площадь эллипса = %g is %g",R,c);
-    puts("");
-    c = log10(exp(100));
-    printf("\n lg(exp(100)) = %g is %g",R,c);
-    c = log(exp(100));
-    printf("\n ln(exp(100)) = %g is %g",R,c);
-    puts("");
-
-    printf("\n Максимальный интегер: %d\n ", INT_MAX);
-    printf("Минимальный интегер: %d\n ", INT_MIN);
-    puts("");
-    printf(" Maximum real number of float: %g\n ", FLT_MAX);
-    printf("Минимальное real number of float: %g\n ", FLT_MIN);
-    puts("");
-    printf(" Maximum real number type double: %g\n ", DBL_MAX);
-    printf("Минимальное real number type double: %g\n ", DBL_MIN);
-    puts("");
-    printf(" Maximum real number type char: %g\n ", CHAR_MAX);
-    printf("Минимальное real number type char: %g\n ", CHAR_MIN);
-    puts("");
-    printf(" Maximum real number type short: %g\n ", SHRT_MAX);
-    printf("Минимальное real number type short: %g\n ", SHRT_MIN);
-    puts("");
-    printf(" Maximum real number type long: %g\n ", LONG_MAX);
-    printf("Минимальное real number type long: %g\n ", LONG_MIN);
-}
+int main() {
+    int z=240, x1=40, y1=38; //z = расстояние, х1 - полиц, x2 - преступник
+    float s;
+    cout<<"\nРасстояние между преступниками (км) : "<<z<<"\nСкорость полицейской машины (м/с) : "<<x1<<"\nСкорость машины преступника (м/с) : "<<y1;
+    s = x1-y1;
+    cout<<"\n---РЕШЕНИЕ---\nРазница в скорости : "<<s;
+    s = 240/s;
+    cout<<"\nВремя, через которое нагонит преступника (с) : "<<s<<"; в (мин.) : "<<s/60;
+    
+    return 0;
