@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% if title == "Mur1" %}
+      <title>{{ title }}</title>
+      {% else %}
+        <title>Mur2</title>
+      {% endif %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+<body>
+  <div class="upMur">
+    <h1>Список моих любимых песенок! [Не все правда :D ]</h1>
+    <ol>
+      <li>{{ songs[0] }}</li>
+      <li>{{ songs[1] }}</li>
+      <li>{{ songs[2] }}</li>
+    </ol>
+  </div>
+    <div class="refs">
+      <h1>
+        <div><a href="/home">MAIN!</a></div>
+      </h1>
+    </div>
+</body>
+</html>

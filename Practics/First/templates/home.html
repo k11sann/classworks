@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% if title == "Mur1" %}
+      <title>{{ title }}</title>
+      {% else %}
+        <title>Mur2</title>
+      {% endif %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  </head>
+<body>
+  <div class="upMur">
+    <h1>ПРИВЕТ Я СДЕЛАЛ НАКОНЕЦТО ЭТО ИЧО ЧТО ЧЕРЕЗ ТИРЕ МАРАТ НЕ УМНИЧОЙ</h1>
+  </div>
+  <div class="refs">
+    <h1>
+      <div class="flex">
+        <a href="/text">TEXT!</a>
+        <a href="/table">TABLE!</a>
+        <a href="/image">IMGES!</a>
+        <a href="/listin">LISTIN!</a>
+        <a href="/auth">AUTH!</a>
+      </div>
+    </h1>
+  </div>
+</body>
+</html>
