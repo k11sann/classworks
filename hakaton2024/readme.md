@@ -11,3 +11,7 @@ DRAW IO Макет - <a href="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=
 python3 -m venv my_env<br>
 source my_env/bin/activate<br>
 pip install flask
+
+СКачать скл алхеми :
+
+pip install flask-sqlalchemy
