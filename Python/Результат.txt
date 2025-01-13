@@ -1,3 +1,0 @@
-meow1.txt       meow
-meow2.txt       meow2
-meow3.txt       meow3
