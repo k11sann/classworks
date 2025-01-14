@@ -1,4 +1,4 @@
-# Запуск тестов: python test_calculator.py -v
+# Запуск тестов: python test_realstring.py -v
 
 # .assertEqual(a, b)	    a == b
 # .assertTrue(x)	        bool(x) is True
