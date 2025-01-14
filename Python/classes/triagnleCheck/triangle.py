@@ -18,4 +18,3 @@ class TriangleChecker:
             return "Нужно вводить только числа!"
             
 prg=TriangleChecker(30,40,15)
-print(prg.is_triangle())
