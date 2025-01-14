@@ -11,7 +11,7 @@ class RealString:
         print("Первая строчка : "+self.string1+"\nДлина строчки : "+str(len(self.string1)))
         print("Вторая строчка : "+self.string2+"\nДлина строчки : "+str(len(self.string2)))
         print("//////////////////////////")    
-        print("Разница : "+self.odd())
+        print("Разница : "+str(self.odd()))
         
     def odd_char_result(self):
         numChar1=0
