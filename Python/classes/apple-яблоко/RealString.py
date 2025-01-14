@@ -4,16 +4,16 @@ class RealString:
         self.string2 = str2
         
     def odd(self):
-        print("Разница : "+str(abs((len(self.string1)-len(self.string2)))))
+        return abs((len(self.string1)-len(self.string2)))
         
     def print_result(self):
         print("//////////////////////////")
         print("Первая строчка : "+self.string1+"\nДлина строчки : "+str(len(self.string1)))
         print("Вторая строчка : "+self.string2+"\nДлина строчки : "+str(len(self.string2)))
         print("//////////////////////////")    
-        print(self.odd)
+        print("Разница : "+self.odd())
         
-    def odd_char(self):
+    def odd_char_result(self):
         numChar1=0
         numChar2=0
         
@@ -32,8 +32,18 @@ class RealString:
         print("//////////////////////////")
         print("Разница : "+str(abs((numChar1-numChar2))))
         
+    def odd_char(self):
+        numChar1=0
+        numChar2=0
+        
+        for i in range(len(self.string1)):
+            numChar1+=ord(self.string1[i])
+            
+        for i in range(len(self.string2)):
+            numChar2+=ord(self.string2[i])
+            
+        return abs((numChar1-numChar2))
+        
         
     
 rs=RealString("Apple","Яблоко")
-rs.print_result()
-rs.odd_char()
