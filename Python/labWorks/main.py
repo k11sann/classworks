@@ -4,7 +4,7 @@
 import sys, os, datetime
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
 
       
@@ -14,6 +14,8 @@ class MainClass(QtWidgets.QMainWindow):
         super().__init__(*args, **kwargs)
         uic.loadUi("title/mainwindow.ui", self)
         self.setWindowTitle('Главная')
+        
+        self.infoBut.clicked.connect(self.displayMessageBox)
         
         self.lab1but.clicked.connect(self.lab1)
         self.lab2but.clicked.connect(self.lab2)
@@ -25,6 +27,9 @@ class MainClass(QtWidgets.QMainWindow):
         #self.lab8but.clicked.connect(self.lab8)
         #self.lab9but.clicked.connect(self.lab9)
         #self.lab10but.clicked.connect(self.lab10)
+        
+    def displayMessageBox(self):
+        QMessageBox.about(self, self.name.text(), "Имя: Даниэль\nФамилия: Субботин\nОтчество: Александрович\nГод рождения: 2006")
         
     def lab1(self):
         self.close()
