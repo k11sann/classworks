@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'mainwindow.ui'
+# Form implementation generated from reading ui file 'title/mainwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -56,6 +56,9 @@ class Ui_MainWindow(object):
         self.lab10but = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.lab10but.setObjectName("lab10but")
         self.gridLayout.addWidget(self.lab10but, 4, 1, 1, 1)
+        self.infoBut = QtWidgets.QPushButton(self.centralwidget)
+        self.infoBut.setGeometry(QtCore.QRect(140, 10, 31, 23))
+        self.infoBut.setObjectName("infoBut")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 500, 21))
@@ -82,3 +85,4 @@ class Ui_MainWindow(object):
         self.lab8but.setText(_translate("MainWindow", "ЛАБ 8"))
         self.lab9but.setText(_translate("MainWindow", "ЛАБ 9"))
         self.lab10but.setText(_translate("MainWindow", "ЛАБ 10"))
+        self.infoBut.setText(_translate("MainWindow", "[ i ]"))
