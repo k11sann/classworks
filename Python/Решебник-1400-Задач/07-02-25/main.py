@@ -173,8 +173,8 @@ class Quest():
 
         if res_sport1!=res_sport2:
             names_dict = {res_sport1:self.sport1[0], res_sport2:self.sport2[0]}
-            print("Первый спортсмен : "+str(res_sport1))
-            print("Второй спортсмен : "+str(res_sport2))
+            print(f"{names_dict[res_sport1]} : "+str(res_sport1))
+            print(f"{names_dict[res_sport2]} : "+str(res_sport2))
             res = max(res_sport1,res_sport2)
             return f"Победитель : {names_dict[res]}, Кол-во баллов : {res}" # я случайно забыл задание и думал нужно было определить победителя....
         else:
