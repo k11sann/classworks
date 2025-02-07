@@ -9,7 +9,7 @@ class Quest():
         pass
 
     def inKm(self, x):
-        return x*0.3048
+        return x*0.000305
 
 
 main=Quest()
@@ -149,3 +149,39 @@ class Quest():
 main=Quest(18900)
 main.resultAllZp(32)
 print("Зарплата : 18900\nКол-во сотрудников : 32\nРезультат = "+str(main.allZp))
+
+print("\n/-/-/-/-/ 7.10")
+class Quest():
+    def __init__(self):
+        self.sport1 = []
+        self.sport2 = []
+    
+    def setSport1(self, values):
+        self.sport1 = values
+
+    def setSport2(self, values):
+        self.sport2 = values
+
+    def resultSports(self):
+        res_sport1 = 0
+        res_sport2 = 0
+        for i in range(1,len(self.sport1)):
+            res_sport1+=self.sport1[i]
+
+        for i in range(1,len(self.sport2)):
+            res_sport2+=self.sport2[i]
+
+        if res_sport1!=res_sport2:
+            names_dict = {res_sport1:self.sport1[0], res_sport2:self.sport2[0]}
+            print("Первый спортсмен : "+str(res_sport1))
+            print("Второй спортсмен : "+str(res_sport2))
+            res = max(res_sport1,res_sport2)
+            return f"Победитель : {names_dict[res]}, Кол-во баллов : {res}" # я случайно забыл задание и думал нужно было определить победителя....
+        else:
+            return "Одинаковые баллы"
+
+
+main=Quest()
+main.setSport1(["Первый спортсмен",2,3,5,1,2])
+main.setSport2(["Второй спортсмен",5,4,3,2,1])
+print(main.resultSports())
