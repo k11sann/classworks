@@ -1,13 +1,13 @@
 #pyuic5 mainwindow.ui -o mainwindow.py
 #pyuic5 lab1/mainwindow.ui -o lab1/mainwindow.py
+#pyuic5 lab3/mainwindow.ui -o lab3/mainwindow.py
 
-import sys, os, datetime
+import sys, os, datetime, openpyxl
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 
-
-      
+from docxtpl import DocxTemplate
             
 class MainClass(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -19,7 +19,7 @@ class MainClass(QtWidgets.QMainWindow):
         
         self.lab1but.clicked.connect(self.lab1)
         self.lab2but.clicked.connect(self.lab2)
-        #self.lab3but.clicked.connect(self.lab3)
+        self.lab3but.clicked.connect(self.lab3)
         #self.lab4but.clicked.connect(self.lab4)
         #self.lab5but.clicked.connect(self.lab5)
         #self.lab6but.clicked.connect(self.lab6)
@@ -39,6 +39,11 @@ class MainClass(QtWidgets.QMainWindow):
     def lab2(self):
         self.close()
         self.main = Lab2()
+        self.main.show()
+
+    def lab3(self):
+        self.close()
+        self.main = Lab3()
         self.main.show()
         
 class Lab1(QtWidgets.QMainWindow):
@@ -89,7 +94,6 @@ class Lab1(QtWidgets.QMainWindow):
         self.main = MainClass()
         self.main.show()
        
-       
 class Lab2(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -129,6 +133,74 @@ class Lab2(QtWidgets.QMainWindow):
         self.main = MainClass()
         self.main.show()
         
+class Lab3(QtWidgets.QMainWindow):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        uic.loadUi("lab3/mainwindow.ui", self)
+        self.exampleButton.accepted.connect(self.example)
+        self.excelButton.accepted.connect(self.excel)
+        self.saveButton.accepted.connect(self.save)
+        self.resultBut.clicked.connect(self.result)
+        self.backBut.clicked.connect(self.back)
+        self.setWindowTitle('Лабораторная работа 3')
+
+        self.example_path = ""
+        self.excel_path = ""
+        self.save_path = ""
+        
+    def example(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, 'Открыть файл', '', '')
+        
+        self.examplePath.setText(str(file_name))
+        self.example_path = str(file_name)
+
+    def excel(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, 'Выбрать файл', '', '')
+        
+        self.excelPath.setText(str(file_name))
+        self.excel_path = str(file_name)
+
+    def save(self):
+        file_name = QFileDialog.getExistingDirectory(self, 'Выберите папку', '')
+        
+        self.savePath.setText(str(file_name))
+        self.save_path = str(file_name)
+
+    def result(self):
+        if self.example_path != "" and self.excel_path!="" and self.save_path!="":
+            print(self.example_path)
+            print(self.excel_path)
+            print(self.save_path)
+            wb = openpyxl.load_workbook(self.excel_path)
+            ws = wb.active
+            data = []
+            for row in ws.iter_rows(min_row=2):
+                data.append({
+                    'name': row[0].value,
+                    'reason': row[1].value,
+                    'chill_time': row[2].value
+                })
+
+            print(data)
+            template = DocxTemplate(self.example_path)
+            for i, record in enumerate(data):
+                template.render(record)
+                filename = f'{self.save_path}/result_{i + 1}.docx'
+                template.save(filename)
+        else:
+            if self.example_path=="":
+                self.examplePath.setText("Путь не указан")
+            elif self.excel_path=="":
+                self.excelPath.setText("Путь не указан")
+            elif self.save_path=="":
+                self.savePath.setText("Путь не указан")
+
+    def back(self):
+        self.close()
+        self.main = MainClass()
+        self.main.show()
+
+
 app = QtWidgets.QApplication(sys.argv)
 main = MainClass()
 main.show()
