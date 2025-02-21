@@ -187,12 +187,14 @@ class Lab3(QtWidgets.QMainWindow):
                 template.render(record)
                 filename = f'{self.save_path}/result_{i + 1}.docx'
                 template.save(filename)
+            self.labelResult.setText("Успешно!")
         else:
+            self.labelResult.setText("Не везде указан путь")
             if self.example_path=="":
                 self.examplePath.setText("Путь не указан")
-            elif self.excel_path=="":
+            if self.excel_path=="":
                 self.excelPath.setText("Путь не указан")
-            elif self.save_path=="":
+            if self.save_path=="":
                 self.savePath.setText("Путь не указан")
 
     def back(self):
