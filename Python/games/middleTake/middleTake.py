@@ -3,6 +3,7 @@ import time, threading
 defaultSimbol = "✆ "
 lineSimbol = "█ "
 arrowSimbol = "▼ "
+blockSimbol = "✖ "
 borderSimbol = " ▞ "
 lineLowSimbol = "━ "
 
@@ -10,24 +11,27 @@ lvls = [[11, 5, 0.5], # 1 - Размер по x [ рекомендуется н�
         [13, 7, 0.4],
         [9, 9, 0.3],
         [7, 11, 0.25],
-        [7, 6, 0.5, [9, 3]],
-        [9, 8, 0.35, [2, 5]]
+        [9, 6, 0.5, [7, 3]],
+        [11, 8, 0.45, [7, 3], [3, 5]],
+        [9, 15, 0.35, [3, 3], [7, 5], [5, 8], [2,12]]
         ]
 
 secondary_middles = []
 
 class QuadroGame:
     def __init__(self):
-        self.current_lvl = 0
+        self.current_lvl = 1 # чит код по факту, писать уровни от 1 до ???
+        self.current_lvl-=1
         self.x = lvls[self.current_lvl][1]
         self.y = lvls[self.current_lvl][0]
         self.time = lvls[self.current_lvl][2]
         self.quads = [[defaultSimbol]* self.x for i in range(self.y)]
+        secondary_middles.clear()
         if len(lvls[self.current_lvl])>=3:
             for i in range(3, len(lvls[self.current_lvl])):
                 secondary_middles.append(lvls[self.current_lvl][i])
-                self.y+=1
-            #print(secondary_middles)
+            for i in range(0, len(secondary_middles)):
+                self.quads[secondary_middles[i][0]][secondary_middles[i][1]-1] = lineSimbol
         self.gameEnd = False
         self.curX = 0
         self.curY = 0
@@ -41,18 +45,16 @@ class QuadroGame:
         self.y = lvls[self.current_lvl][0]
         self.time = lvls[self.current_lvl][2]
         self.quads = [[defaultSimbol]* self.x for i in range(self.y)]
-        secondary_middles=[]
+        secondary_middles.clear()
         if len(lvls[self.current_lvl])>=3:
             for i in range(3, len(lvls[self.current_lvl])):
                 secondary_middles.append(lvls[self.current_lvl][i])
-                self.x+=1
-                #for i in range(cru)
-                self.quads[secondary_middles[i-3][0]][secondary_middles[i-3][1]-1] = lineSimbol
-            #print(secondary_middles)
-        self.gameEnd=False
-        self.curX=0
-        self.curY=0
-        self.curMiddle=0
+            for i in range(0, len(secondary_middles)):
+                self.quads[secondary_middles[i][0]][secondary_middles[i][1]-1] = lineSimbol
+        self.gameEnd = False
+        self.curX = 0
+        self.curY = 0
+        self.curMiddle = 0
         self.curNumMiddle = 0
         self.check = False
         self.died = False
@@ -60,47 +62,51 @@ class QuadroGame:
         
     def gameResult(self, result):
         if result==True:
-            print("◄ "+str(" ▰"*int(mainGame.y+1)))
-            print("   ЦЕНТР ВЗЯТ ☻  ")
-            print("◄ "+str(" ▰"*int(mainGame.y+1)))
+            print("◄  ЦЕНТР ВЗЯТ ☻  ")
+            print("◣ "+str(" ▰"*int(mainGame.y+1)))
             if self.current_lvl>=len(lvls):
                 self.current_lvl=0
             else:
                 self.current_lvl+=1
             time.sleep(1)
         else:
-            print("◄ "+str(" ▰"*int(mainGame.y+1)))
-            print(" ИГРА ПРОИГРАНА ☢ ")
-            print("◄ "+str(" ▰"*int(mainGame.y+1)))
+            print("◄  ИГРА ПРОИГРАНА ☢ ")
+            print("◣ "+str(" ▰"*int(mainGame.y+1)))
             time.sleep(1)
         
     def setQuad(self, x0, y0):
             
         if (self.diedCheck()==True):
             self.died=True    
-        self.quads[x0][y0] = lineSimbol
         try:
-            self.quads[self.curX-1][self.curY] = defaultSimbol
+            if self.quads[self.curX-1][self.curY]!=lineSimbol and self.quads[self.curX-1][self.curY]!=blockSimbol:
+                self.quads[self.curX-1][self.curY] = defaultSimbol
         except ValueError:
             pass
         
         self.curX=0
         self.curY+=1
-        if self.curNumMiddle < len(secondary_middles) and self.curY == secondary_middles[self.curNumMiddle][1]:
-            print("NGNJWEGJKENWJKGW "+str(secondary_middles[self.curNumMiddle][0]))
-            self.curMiddle=secondary_middles[self.curNumMiddle][0]
-            self.curNumMiddle+=1
+        try:
+            if self.curNumMiddle <= len(secondary_middles) and self.curY == secondary_middles[self.curNumMiddle][1]:
+                #print("NGNJWEGJKENWJKGW "+str(secondary_middles[self.curNumMiddle][0]))
+                self.curMiddle=secondary_middles[self.curNumMiddle][0]
+                self.curNumMiddle+=1
+                self.quads[x0][y0] = blockSimbol
+            else:
+                self.quads[x0][y0] = lineSimbol
+        except IndexError:
+            self.quads[x0][y0] = lineSimbol
         
     def moveQuad(self):
         if self.curY <= self.x-2:
             try:
-                if self.quads[self.curX][self.curY]!=lineSimbol:
+                if self.quads[self.curX][self.curY]!=lineSimbol and self.quads[self.curX][self.curY]!=lineSimbol:
                     self.quads[self.curX][self.curY] = arrowSimbol
             except ValueError:
                 pass
             
             try:
-                if self.quads[self.curX-1][self.curY]!=lineSimbol:
+                if self.quads[self.curX-1][self.curY]!=lineSimbol and self.quads[self.curX-1][self.curY]!=blockSimbol:
                     self.quads[self.curX-1][self.curY] = defaultSimbol
             except ValueError:
                 pass
@@ -113,21 +119,31 @@ class QuadroGame:
         
     def printQuad(self):
         if self.curY<=self.x:
+            fullPrint=""
             quadStr=""
+            fullPrint+="\n\n"
+            fullPrint+="У-"+str(self.current_lvl+1)+str(" ▰"*int(self.y+1))
+            if self.current_lvl==4:
+                fullPrint+=" Сначала закончите первый стобец, а затем закончите второй [ "+blockSimbol+" символ законч. столбца ]"
+            fullPrint+="\n"
             for i in range(self.x-1):
                 for j in range(self.y):
                     quadStr+=self.quads[j][i]
 
                 if i+1<10:
-                    print("0"+str(i+1)+borderSimbol+quadStr)
+                    quadStr=("0"+str(i+1)+borderSimbol+quadStr)
                 else:
-                    print(str(i+1)+borderSimbol+quadStr)
+                    quadStr=(str(i+1)+borderSimbol+quadStr)
+                fullPrint+=quadStr+"\n"
                 quadStr=""
+            fullPrint+="i- "+str(" ▰"*int(mainGame.y+1))+"\n"
+            fullPrint+="◄  НАЖИМАЙ ENTER  \n"
+            fullPrint+="i- "+str(" ▰"*int(mainGame.y+1))+"\n"
+            print(fullPrint)
             
     def diedCheck(self, check0=None):
         if check0==True:
             self.check=check0
-        #print(self.check)
         
         if self.curX>self.curMiddle:
             self.curNumMiddle=0
@@ -154,9 +170,8 @@ mainGame = QuadroGame()
 def gameLoop():
     while(True):
         if mainGame.current_lvl>=len(lvls):
-            print("\n◤ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰\n")
-            print("   ИГРА УСПЕШНО ПРОЙДЕНА  \n")
-            print("   УРОВНИ ПОЙДУТ СНАЧАЛА  ")
+            print("◄  ИГРА УСПЕШНО ПРОЙДЕНА  \n")
+            print("◄  УРОВНИ ПОЙДУТ СНАЧАЛА  ")
             print("◣ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰ ▰\n")
             mainGame.current_lvl=0
             time.sleep(1)
@@ -166,7 +181,6 @@ def gameLoop():
         mainGame.gameEnd=False
         if mainGame.gameEnd==False:
             mainGame.setUp()
-            #mainGame.printQuad()
             while(mainGame.gameEnd==False):
                 if mainGame.diedCheck()==True or mainGame.died==True: #проигрыш
                     mainGame.gameEnd==True
@@ -181,7 +195,6 @@ def gameLoop():
                 time.sleep(mainGame.time)
                 mainGame.check=False
                 mainGame.moveQuad()
-                print("У-"+str(mainGame.current_lvl)+str(" ▰"*int(mainGame.y+1)))
                 mainGame.printQuad()
                 #print("curY = "+str(mainGame.curY)+"; Y = "+str(mainGame.x-1)+"; NEW MIDDLE = "+str(mainGame.curMiddle))
                     
