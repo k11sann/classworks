@@ -13,14 +13,15 @@ lvls = [[11, 5, 0.5], # 1 - Размер по x [ рекомендуется н�
         [7, 11, 0.25],
         [9, 6, 0.5, [7, 3]],
         [11, 8, 0.45, [7, 3], [3, 5]],
-        [9, 15, 0.35, [3, 3], [7, 5], [5, 8], [2,12]]
+        [9, 15, 0.35, [3, 3], [7, 5], [5, 8], [2,12]],
+        [9, 13, 0.4, [2, 2], [5, 4], [2, 6], [5,8], [1,10]]
         ]
 
 secondary_middles = []
 
 class QuadroGame:
     def __init__(self):
-        self.current_lvl = 7 # чит код по факту, писать уровни от 1 до ???
+        self.current_lvl = 8 # чит код по факту, писать уровни от 1 до ???
         self.current_lvl-=1
         self.x = lvls[self.current_lvl][1]
         self.y = lvls[self.current_lvl][0]
@@ -63,7 +64,7 @@ class QuadroGame:
     def gameResult(self, result):
         if result==True:
             print("◄  ЦЕНТР ВЗЯТ ☻  ")
-            print("◣ "+str(" ▰"*int(mainGame.y+1)))
+            print("◣  "+str(" ▰"*int(mainGame.y+1)))
             if self.current_lvl>=len(lvls):
                 self.current_lvl=0
             else:
@@ -71,7 +72,7 @@ class QuadroGame:
             time.sleep(1)
         else:
             print("◄  ИГРА ПРОИГРАНА ☢ ")
-            print("◣ "+str(" ▰"*int(mainGame.y+1)))
+            print("◣  "+str(" ▰"*int(mainGame.y+1)))
             time.sleep(1)
         
     def setQuad(self, x0, y0):
