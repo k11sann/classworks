@@ -20,7 +20,7 @@ secondary_middles = []
 
 class QuadroGame:
     def __init__(self):
-        self.current_lvl = 1 # чит код по факту, писать уровни от 1 до ???
+        self.current_lvl = 7 # чит код по факту, писать уровни от 1 до ???
         self.current_lvl-=1
         self.x = lvls[self.current_lvl][1]
         self.y = lvls[self.current_lvl][0]
@@ -89,6 +89,12 @@ class QuadroGame:
         try:
             if self.curNumMiddle <= len(secondary_middles) and self.curY == secondary_middles[self.curNumMiddle][1]:
                 #print("NGNJWEGJKENWJKGW "+str(secondary_middles[self.curNumMiddle][0]))
+                if secondary_middles[self.curNumMiddle][0]-x0>0:
+                    for i in range(x0, secondary_middles[self.curNumMiddle][0]):
+                        self.quads[i][y0] = lineLowSimbol
+                elif secondary_middles[self.curNumMiddle][0]-x0<0:
+                    for i in range(secondary_middles[self.curNumMiddle][0]+1, x0):
+                        self.quads[i][y0] = lineLowSimbol
                 self.curMiddle=secondary_middles[self.curNumMiddle][0]
                 self.curNumMiddle+=1
                 self.quads[x0][y0] = blockSimbol
@@ -138,7 +144,7 @@ class QuadroGame:
                 quadStr=""
             fullPrint+="i- "+str(" ▰"*int(mainGame.y+1))+"\n"
             fullPrint+="◄  НАЖИМАЙ ENTER  \n"
-            fullPrint+="i- "+str(" ▰"*int(mainGame.y+1))+"\n"
+            fullPrint+="i- "+str(" ▰"*int(mainGame.y+1))
             print(fullPrint)
             
     def diedCheck(self, check0=None):
