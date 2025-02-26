@@ -18,7 +18,7 @@ secondary_middles = []
 
 class QuadroGame:
     def __init__(self):
-        self.current_lvl = 5
+        self.current_lvl = 0
         self.x = lvls[self.current_lvl][1]
         self.y = lvls[self.current_lvl][0]
         self.time = lvls[self.current_lvl][2]
