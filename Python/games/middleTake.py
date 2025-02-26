@@ -11,15 +11,14 @@ lvls = [[11, 5, 0.5], # 1 - Размер по x [ рекомендуется н�
         [9, 9, 0.3],
         [7, 11, 0.25],
         [7, 6, 0.5, [9, 3]],
-        [9, 8, 0.35, [2, 5]],
-        [16, 16, 0.25, [14, 16]]
+        [9, 8, 0.35, [2, 5]]
         ]
 
 secondary_middles = []
 
 class QuadroGame:
     def __init__(self):
-        self.current_lvl = 0
+        self.current_lvl = 5
         self.x = lvls[self.current_lvl][1]
         self.y = lvls[self.current_lvl][0]
         self.time = lvls[self.current_lvl][2]
