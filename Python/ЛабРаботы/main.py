@@ -2,7 +2,8 @@
 #pyuic5 lab1/mainwindow.ui -o lab1/mainwindow.py
 #pyuic5 lab4/mainwindow.ui -o lab4/mainwindow.py
 
-import sys, os, datetime, openpyxl, json, requests, bs4
+import sys, os, datetime, openpyxl, json, requests
+from bs4 import BeautifulSoup
 from PyQt5 import QtCore, QtGui, QtWidgets, uic
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QFileDialog, QMessageBox, QTableWidgetItem
@@ -22,7 +23,6 @@ class MainClass(QtWidgets.QMainWindow):
         self.lab3but.clicked.connect(self.lab3)
         self.lab4but.clicked.connect(self.lab4)
         self.lab5but.clicked.connect(self.lab5)
-        #self.lab5but.clicked.connect(self.lab5)
         #self.lab6but.clicked.connect(self.lab6)
         #self.lab7but.clicked.connect(self.lab7)
         #self.lab8but.clicked.connect(self.lab8)
@@ -257,35 +257,27 @@ class Lab5(QtWidgets.QMainWindow):
         self.setWindowTitle('Лабораторная работа 5')
         
     def example(self):
-        url = 'https://zen.yandex.ru/'
-        response = requests.get(url)
-        
+        url = 'https://minecraft-inside.ru/skins/'
+        r = requests.get(url)
+        soup = BeautifulSoup(r.text, 'html.parser')
+
+        nickname = soup.find_all('h2', class_='box__title')
+        views = soup.find_all('div', class_='info__item post__views')
+
         self.labelResult.setText(str(url))
-        request_result=requests.get(url) 
-        soup = bs4.BeautifulSoup(response.text, 'html.parser')
-        articles = soup.find_all('a', class_='card-title')
-        print(request_result.status_code)
-        for article in articles:
-            print(article.text.strip())
-        #print(soup)
-        #lenta = soup.find_all('div', class_='dzen-layout--snackbar-context-provider__snackbarContextProvider-3x')
-        #for item in lenta:
-        #    print(item)
-                
-            
-        #imdata = json_object["imdata"]
-        #
-        #data_list=["dn", "descr", "speed", "mtu"]
-        #
-        #self.tableWidget.setRowCount(len(imdata))
-        #self.tableWidget.setColumnCount(len(data_list))
-        #
-        #for i in imdata:
-        #    for j in data_list:
-        #        info = i["l1PhysIf"]["attributes"][j]
-        #        self.tableWidget.setItem(int(imdata.index(i)), int(data_list.index(j)), QTableWidgetItem(info))
-        #else:
-        #    self.labelResult.setText("Файл не выбран/Не найден")
+
+        self.tableWidget.setRowCount(len(nickname))
+        self.tableWidget.setColumnCount(2)
+        
+        self.tableWidget.setItem(0, 0, QTableWidgetItem("Nickname"))
+        self.tableWidget.setItem(0, 1, QTableWidgetItem("Просмотры"))
+        
+        if r.status_code == 200:
+            for i in range(0,len(nickname)):
+                self.tableWidget.setItem(i+1, 0, QTableWidgetItem(str(nickname[i].text)))
+                self.tableWidget.setItem(i+1, 1, QTableWidgetItem(str(views[i].text)))
+        else:
+            self.labelResult.setText("Ошибка : "+str(r.status_code))
 
     def back(self):
         self.close()
