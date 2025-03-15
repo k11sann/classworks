@@ -1,0 +1,7 @@
+from docxtpl import DocxTemplate
+
+doc = DocxTemplate("test.docx")
+context = {'var': "Тестовый текст",
+           'sar': "тест"}
+doc.render(context)
+doc.save("result.docx")

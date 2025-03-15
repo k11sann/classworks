@@ -1,0 +1,14 @@
+from docxtpl import DocxTemplate
+
+doc = DocxTemplate("razvod.docx")
+context = {'sud_name': "Марат Хуснутдинов Илшатович",
+           'jenih': "Субботин Д.А",
+           'jena': "Сельвестр С.Ю",
+           'date1': "20",
+           'date2': "02",
+           'date3': "25",
+           'series': "622341",
+           'number': "2",
+           'reason': "Он меня задолбал, с ним невозможно жить семейной жизнью, он думает только о своей пицце!!!"}
+doc.render(context)
+doc.save("razvod_result.docx")
