@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.7.1.1266 (corp) Yowser/2.5 Safari/537.36" version="26.1.3">
   <diagram name="Страница — 1" id="41kiccPGrt66aiMSX8GJ">
-    <mxGraphModel dx="2231" dy="2300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="893" dy="1622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -95,7 +95,7 @@
         <mxCell id="zBi2rx2qZ50dP64DYOzD-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.879;entryY=1.014;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-59" target="zBi2rx2qZ50dP64DYOzD-34">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="zBi2rx2qZ50dP64DYOzD-64" value="Покупка билета" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="zBi2rx2qZ50dP64DYOzD-64" value="Покупка билета" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
           <mxGeometry x="1262" y="-510" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zBi2rx2qZ50dP64DYOzD-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-65" target="zBi2rx2qZ50dP64DYOzD-76">
@@ -155,7 +155,7 @@
         <mxCell id="zBi2rx2qZ50dP64DYOzD-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-80" target="zBi2rx2qZ50dP64DYOzD-84">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="zBi2rx2qZ50dP64DYOzD-80" value="Утвердить" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zBi2rx2qZ50dP64DYOzD-80" value="Утвердить в бд" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1391" y="-290" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="zBi2rx2qZ50dP64DYOzD-82" value="Оплата" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -173,7 +173,7 @@
         <mxCell id="zBi2rx2qZ50dP64DYOzD-88" value="Система" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1421" y="-210" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="zBi2rx2qZ50dP64DYOzD-91" value="Добавление/обновление/удаление рейса" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="zBi2rx2qZ50dP64DYOzD-91" value="Добавление/обновление/удаление рейса" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="1">
           <mxGeometry x="1141" y="-70" width="188" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zBi2rx2qZ50dP64DYOzD-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-93" target="zBi2rx2qZ50dP64DYOzD-109">
@@ -218,7 +218,7 @@
         <mxCell id="zBi2rx2qZ50dP64DYOzD-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-109" target="zBi2rx2qZ50dP64DYOzD-111">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="zBi2rx2qZ50dP64DYOzD-109" value="Утвердить" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zBi2rx2qZ50dP64DYOzD-109" value="Утвердить в бд" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1266.5" y="100" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="zBi2rx2qZ50dP64DYOzD-111" value="Рейс" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
