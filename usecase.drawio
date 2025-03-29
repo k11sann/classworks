@@ -609,7 +609,7 @@
           <mxGeometry x="1440" y="187" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="o3DSNkwkEeJHTdHTqkp9-20" value="Сверка данных из БД" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1369" y="180" width="60" height="20" as="geometry" />
+          <mxGeometry x="1361" y="180" width="60" height="20" as="geometry" />
         </mxCell>
         <mxCell id="o3DSNkwkEeJHTdHTqkp9-23" value="Утвердить в БД" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1440" y="295" width="120" height="60" as="geometry" />
