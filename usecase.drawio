@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 YaBrowser/23.7.1.1266 (corp) Yowser/2.5 Safari/537.36" version="26.1.3">
   <diagram name="Страница — 1" id="41kiccPGrt66aiMSX8GJ">
-    <mxGraphModel dx="6077" dy="5093" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1827" dy="2863" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -679,8 +679,17 @@
         <mxCell id="4Ysq968NMV6VdzX3TnaM-29" value="Изменить личные данные" style="rounded=0;whiteSpace=wrap;html=1;shape=ellipse;perimeter=ellipsePerimeter;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="-193" y="-1260" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="4Ysq968NMV6VdzX3TnaM-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="4Ysq968NMV6VdzX3TnaM-31" target="4Ysq968NMV6VdzX3TnaM-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="4Ysq968NMV6VdzX3TnaM-31" value="Организация" style="rounded=0;whiteSpace=wrap;html=1;shape=ellipse;perimeter=ellipsePerimeter;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="-363" y="-1260" width="120" height="60" as="geometry" />
+          <mxGeometry x="-533" y="-1260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4Ysq968NMV6VdzX3TnaM-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="4Ysq968NMV6VdzX3TnaM-32" target="4Ysq968NMV6VdzX3TnaM-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4Ysq968NMV6VdzX3TnaM-32" value="Организация" style="rounded=0;whiteSpace=wrap;html=1;shape=ellipse;perimeter=ellipsePerimeter;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="-533" y="-1110" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
