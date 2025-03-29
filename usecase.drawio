@@ -136,7 +136,7 @@
           <mxGeometry x="1421" y="-130" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="zBi2rx2qZ50dP64DYOzD-91" value="Добавление/обновление/удаление рейса" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="1" vertex="1">
-          <mxGeometry x="1143.5" width="188" height="30" as="geometry" />
+          <mxGeometry x="1310" y="30" width="188" height="30" as="geometry" />
         </mxCell>
         <mxCell id="o3DSNkwkEeJHTdHTqkp9-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zBi2rx2qZ50dP64DYOzD-93" target="o3DSNkwkEeJHTdHTqkp9-18">
           <mxGeometry relative="1" as="geometry" />
