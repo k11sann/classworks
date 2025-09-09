@@ -1,0 +1,31 @@
+// Субботин Д.А ИС-22/9-П
+
+import 'dart:math'; // для рандома
+
+void main() {
+   var randomNumber = Random().nextInt(100); // рандомное число от 0-100
+   var s = []; // лист слов для вывода
+   var result = ""; // строка вывода
+   
+   if (randomNumber==0){ // если рандом выдал 0, то делаем 1 (по заданию от 1 до 100)
+       randomNumber=1;
+   }
+   print("Вывод числа : $randomNumber");
+   
+   if (randomNumber%3==0){ // если кратно 3
+       s.add("Super");
+   }
+   if (randomNumber%5==0){ // если кратно 5
+       s.add("Quiz");
+   }
+   
+   if (s.length==0){ // если слов нет, то выводит сообщение
+       print("Число не кратно ни 5, ни 3");
+   } else { // если слова есть
+        for (var word in s){ // каждое слово из списка
+            result+="$word "; // прибавляется к переменной вывода
+        }
+   }
+   
+   print("$result"); // вывод
+}
