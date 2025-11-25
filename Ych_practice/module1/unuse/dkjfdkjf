@@ -1,0 +1,16 @@
+def add_to_base_users():
+        try:
+            users = Export.import_users()
+            conn = Export.get_base()
+            cur = conn.cursor()
+            for i in range(len(users)):
+                cur.execute(
+                    """
+                    INSERT OR REPLACE INTO users(role, fio, login, password) VALUES(?, ?, ?, ?)
+                    """,
+                    users[i]
+                )
+            conn.commit()  # Применяем изменения
+            conn.close()
+        except:
+            print("! ! ! ! ОШИБКА БАЗЫ ДАННЫХ")
